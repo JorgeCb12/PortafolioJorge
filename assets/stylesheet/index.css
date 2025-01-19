@@ -453,7 +453,7 @@ span+span {
 .cards--proyectos {
     padding-bottom: 2rem;
     background-color: var(--white);
-    min-width: 33rem;
+    min-width: 30rem;
     max-width: 38rem;
     box-shadow: 0 10px 16px -6px rgb(5 5 5 / 30%), 0 25px 10px -24px rgb(5 5 5 / 10%);
 }
