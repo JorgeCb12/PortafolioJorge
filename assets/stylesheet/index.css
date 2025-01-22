@@ -281,7 +281,9 @@ span+span {
     border-radius: 50%;
     max-width: 28rem;
     max-height: 28em;
+    transition: 1s;
 }
+
 .home_info {
     display: flex;
     justify-content: center;
@@ -324,8 +326,8 @@ span+span {
 .container_parrafo-info {
     display: none;
 }
-
 .cv_button {
+    position: relative;
     border: 2px solid var(--Primary);
     color: var(--white);
     font-family: 'Cooper Hewitt';
@@ -338,6 +340,33 @@ span+span {
     cursor: pointer;
     padding: 8px 20px;
     border-radius: 5px;
+    overflow: hidden;
+}
+
+.cv_button span {
+    position: relative;
+    z-index: 2;
+}
+
+.cv_button::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: -100%;
+    background: var(--Primary);
+    transition: left .4s ease-in-out;
+   
+}
+
+.cv_button:hover::after {
+    left: 0; 
+}
+.cv_button:hover {
+    color: #000;
+    
 }
 
 .contact_button {
