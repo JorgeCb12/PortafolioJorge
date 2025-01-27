@@ -65,8 +65,7 @@ div.btn {
 
 .container_image-home {
     width: 55%;
-    padding-right: 2rem;
-    padding-bottom: 5rem;
+    padding-right: -4rem;
     position: relative;
     justify-content: center;
     align-items: center;
@@ -74,8 +73,8 @@ div.btn {
 
 .image_home {
     object-fit: contain;
-    max-width: 30rem;
-    max-height: 30rem;
+    max-width: 32rem;
+    max-height: 32rem;
 }
 
 .image_home:hover {
@@ -102,7 +101,7 @@ div.btn {
 }
 
 .home_text-2 {
-    font-size: 7rem;
+    font-size: 8rem;
     font-weight: bold;
     color: var(--Primary);
     width: 150%;
@@ -110,8 +109,8 @@ div.btn {
 
 .home_text-3 {
     margin: 0 0 2rem 0;
-    font-size: 3.5rem;
-    width: 40rem;
+    font-size: 4rem;
+    width: 45rem;
     letter-spacing: .2rem;
 }
 
@@ -123,7 +122,7 @@ div.btn {
 .container_parrafo-info p {
     font-family: 'Cooper Hewitt';
     color: var(--white);
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 300;
     letter-spacing: 1px;
     line-height: 3.2rem;
@@ -141,6 +140,7 @@ div.btn {
     border: 2px solid var(--Primary);
     border-radius: 5px;
     font-size: 1.5rem;
+    padding: 12px 60px;
 }
 
 .contact_button {
@@ -156,7 +156,7 @@ div.btn {
     letter-spacing: .1rem;
     margin: 2rem 0;
     cursor: pointer;
-    padding: 8px 60px;
+    padding: 12px 60px;
     border-radius: 5px;
     overflow: hidden;
 }

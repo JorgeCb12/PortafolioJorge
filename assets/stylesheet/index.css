@@ -265,6 +265,7 @@ span+span {
     background-color: var(--fond);
     width: 100%;
     height: auto;
+    border-left: 1rem solid var(--Primary);
 }
 .container_image-home {
     width: 100%;
@@ -473,28 +474,24 @@ span+span {
 }
 
 .cards_container--proyectos {
-    margin-bottom: 5rem;
+    margin-bottom: 20rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+   
 }
 
 .cards--proyectos {
-    padding-bottom: 2rem;
-    background-color: var(--white);
+    padding-bottom: 10rem;
+    background-color: transparent;
+    margin-bottom: 1.8rem;
+    border: 2px solid #ffffff50;
+    padding: 10px;
     min-width: 30rem;
     max-width: 38rem;
-    box-shadow: 0 10px 16px -6px rgb(5 5 5 / 30%), 0 25px 10px -24px rgb(5 5 5 / 10%);
+    box-shadow: 0px 10px -4px #ffffff80;
 }
 
-.card_JuegoAhorcado {
-    margin-bottom: 4rem;
-}
-
-.card_portafolio {
-    margin-bottom: 4rem;
-    border: 1px solid var(--eerie-black);
-}
 
 .container_imgCard--proyectos {
     margin-bottom: 1rem;
@@ -514,13 +511,13 @@ span+span {
     font-family: 'Cooper Hewitt';
     letter-spacing: .1rem;
     font-size: 1.8rem;
-    color: var(--fond);
+    color: var(--white);
     font-weight: bold;
     display: inline;
 }
 
 .container_textCard--proyectos p {
-    color: var(--fond);
+    color: var(--white);
     font-family: 'Cooper Hewitt';
     letter-spacing: .1rem;
     font-size: 1.4rem;
@@ -530,6 +527,7 @@ span+span {
 .container_btn--proyectos {
     display: flex;
     justify-content: center;
+    padding-bottom: 20px;
 }
 
 .container_btn--proyectos a{
@@ -553,13 +551,15 @@ span+span {
     border: none;
     background-color: var(--Primary);
     color: var(--fond);
+    border-radius: 1.5rem;
 }
 
 .btn_repo {
     padding: .4rem 0;
-    background: none;
+    background: var(--white);
     color: var(--fond);
-    border: 2px solid var(--Primary);
+    border: none;
+    border-radius: 1.5rem;
 }
 
 .btn_demo img {
@@ -583,7 +583,6 @@ span+span {
     background: var(--Primary);
     box-shadow: 0px 13px 33px -14px rgba(0,0,0,0.75);
     transition: all .4s ease;
-    color: var(--white);
 }
 
 /* Contacto */
