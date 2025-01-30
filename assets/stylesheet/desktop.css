@@ -20,12 +20,16 @@ nav.nav_menu a {
     margin-right: 2.5rem;
     font-weight: 500;
 }
+nav.nav_menu a.course{
+    color: #ffffff90;
+    border: 1px solid #ffffff40;
+    
+}
 
 nav.nav_menu a:hover,
 nav.nav_menu a.active {
     color: var(--Primary);
     padding: .5rem;
-    border-bottom: 1px solid var(--beaver);
     transition: all .5s;
 }
 
@@ -141,6 +145,9 @@ div.btn {
     border-radius: 5px;
     font-size: 1.5rem;
     padding: 12px 60px;
+}
+.course {
+    margin: 0;
 }
 
 .contact_button {
