@@ -4,6 +4,7 @@ const inputName = document.querySelector('#nombre');
 const inputEmail = document.querySelector('#email');
 const flagsElement = document.getElementById('flags');
 const textsToChange = document.querySelectorAll('[data-section]');
+const navLinks = document.querySelectorAll('nav.nav_menu.active a');
 
 /* ===== Loader =====*/
 window.addEventListener('load', () => {
@@ -82,5 +83,16 @@ document.querySelector('.go-top-container').addEventListener('click', () => {
     window.scrollTo({
         top: 0,
         behavior: 'smooth'
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('nav.nav_menu a');
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navLinks.forEach(nav => nav.classList.remove('active'));
+            this.classList.add('active');
+        });
     });
 });
