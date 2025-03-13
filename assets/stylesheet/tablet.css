@@ -31,7 +31,7 @@ nav.nav_menu.active {
     color: var(--white);
     margin-right: 2rem;
     transition: .2s;
-    border: 2px solid var(--Primary);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
     border-radius: 5px;
     font-size: 1.2rem;
     padding: .68rem 2rem;

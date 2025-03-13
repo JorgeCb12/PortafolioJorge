@@ -6,7 +6,7 @@
 
 :root {
     --Primary: #CCF381;
-    --fond: #17202a;
+    --fond: #1E1E1E ;
     --white: #ffffff;
     --black: #000000;
 
@@ -81,7 +81,6 @@ nav.nav_menu.active {
     box-shadow: 0 10px 16px -6px rgb(5 5 5 / 30%), 0 25px 10px -24px rgb(5 5 5 / 10%);
     animation: ease .4s left forwards;
   }
-  
   @keyframes left {
     0% {
       left: 100%;
@@ -345,7 +344,7 @@ span+span {
 }
 .cv_button {
     position: relative;
-    border: 2px solid var(--Primary);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
     color: var(--white);
     font-family: 'Cooper Hewitt';
     background: transparent;
@@ -400,8 +399,6 @@ span+span {
     width: 2.4rem;
     margin: 0 .5rem;
 }
-
-
 
 .links .icon-CodePen {
     width: 2.1rem;
@@ -499,15 +496,16 @@ span+span {
 
 .cards--proyectos {
     padding-bottom: 10rem;
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.04); /* Transparencia basada en --ds-background-100-value */
+    backdrop-filter: blur(20px); /* Desenfoque */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
+    box-shadow: 0px 10px -4px #ffffff80;
     margin-bottom: 1.8rem;
-    border: 2px solid #ffffff50;
     padding: 10px;
     min-width: 30rem;
     max-width: 38rem;
-    box-shadow: 0px 10px -4px #ffffff80;
+   
 }
-
 
 .container_imgCard--proyectos {
     margin-bottom: 1rem;
@@ -565,29 +563,31 @@ span+span {
 .btn_demo {
     padding: .4rem 0;
     border: none;
-    background-color: var(--Primary);
+    background: #F5F5F550;
     color: var(--fond);
-    border-radius: 1.5rem;
+    max-width: 120px;
+    border-radius: 4px;
 }
 
 .btn_repo {
     padding: .4rem 0;
-    background: var(--white);
-    color: var(--fond);
+    background: transparent;
     border: none;
-    border-radius: 1.5rem;
+    background: #F5F5F550;
+    max-width: 120px;
+    border-radius: 4px;
 }
 
 .btn_demo img {
     width: 2rem;
     margin-right: .8rem;
+
 }
 
 .container_btn--proyectos .btn_demo:hover {
-    background: var(--white);
     box-shadow: 0px 13px 33px -14px rgba(0,0,0,0.75);
     transition: all .4s ease;
-    color: var(--fond);
+   
 }
 
 .btn_repo img {
@@ -604,7 +604,6 @@ span+span {
 /* Contacto */
 
 .contacto {
-    background-color: var(--white);
     width: 100%;
     height: auto;
     padding: 0 2rem 5rem 2rem;
@@ -626,10 +625,12 @@ span+span {
 
 .container--contacto {
     width: 100%;
-    background-color: var(--fond);
+    background-color: rgba(0, 0, 0, 0); /* Transparencia basada en --ds-background-100-value */
+    backdrop-filter: blur(20px); /* Desenfoque */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
     padding: 3rem;
     position: relative;
-    box-shadow: 0px 10px 20px #00000050;
+    box-shadow: 0px 10px 20px #00000020;
 }
 
 .container_text--contacto {
@@ -650,10 +651,8 @@ span+span {
     font-family: 'Cooper Hewitt';
     background: transparent;
     width: 100%;
-    border-bottom: 2px solid #000;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Bordes sutiles */
     padding: 1rem;
-    border-radius: 1rem;
-    background: #ffffff;
     color: #000;
     font-size: 1.6rem;
     outline: none;
@@ -671,7 +670,8 @@ span+span {
 }
 
 .form-contact textarea {
-    border-bottom: 3px solid var(--fond);
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Bordes sutiles */
+    padding: 1rem;
     font-family: 'Cooper Hewitt';
     width: 100%;
     padding: 1rem;
@@ -708,8 +708,8 @@ span+span {
 }
 
 .btn_form--contacto button {
-    background: var(--Primary);
-    border: none;
+    background: transparent;
+    border: 1px solid rgba(0, 0, 0, 0.2); /* Bordes sutiles */
     font-family: 'Cooper Hewitt';
     width: 20rem;
     padding: .8rem 1rem;
@@ -717,21 +717,19 @@ span+span {
     font-size: 1.8rem;
     letter-spacing: 1px;
     cursor: pointer;   
-    transition: 1s all;
+    transition: 0.5s all;
 }
 
 .btn_form--contacto button:hover {
-    background: #ffffff;
-    color: var(--black);
-    font-weight: bold;
     transform: scale(1.1);
     box-shadow: 0px 9px 15px -1px rgba(0,0,0,0.20);
-    transition: all .4s ease;
 }
 /* Footer */
 
 footer {
-    background-color: var(--fond);
+    background-color: rgba(0, 0, 0, 0.9); /* Transparencia basada en --ds-background-100-value */
+    backdrop-filter: blur(20px); /* Desenfoque */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
     padding: 50px;
 }
 

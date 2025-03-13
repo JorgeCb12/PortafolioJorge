@@ -134,7 +134,7 @@ div.btn {
     color: var(--white);
     margin-right: 3rem;
     transition: .2s;
-    border: 2px solid var(--Primary);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
     border-radius: 5px;
     font-size: 1.5rem;
     padding: 12px 60px;
@@ -147,7 +147,7 @@ div.btn {
 .contact_button {
     display: inline-block;
     position: relative;
-    border: 2px solid var(--Primary);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
     color: var(--white);
     font-family: 'Cooper Hewitt';
     background: transparent;
