@@ -58,6 +58,17 @@ nav.nav_menu.active {
 
 /* Proyectos */
 
+.cards_container--proyectos {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.cards--proyectos {
+    min-width: auto;
+    max-width: 100%;
+}
+
 .cards--proyectos {
     max-width: 48rem;
 }
