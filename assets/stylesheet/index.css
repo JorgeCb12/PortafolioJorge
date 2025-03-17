@@ -6,7 +6,7 @@
 
 :root {
   --Primary: #ccf381;
-  --fond: #1e1e1e;
+  --fond: #161618;
   --white: #ffffff;
   --black: #1e1e1e;
 }
@@ -411,11 +411,11 @@ span + span {
 
 }
 .fond-habilidades {
-  background: rgba( 255, 255, 255, 0.05 );
+  background: rgba( 255, 255, 255, 0.01 );
   backdrop-filter: blur( 50px );
  -webkit-backdrop-filter: blur( 50px );
   border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   max-width: 400px;
   min-width: 300px;
   margin: 0 auto;
@@ -509,7 +509,7 @@ span + span {
 
 .cards--proyectos {
   padding-bottom: 10rem;
-  background: rgba( 255, 255, 255, 0.05 );
+  background: rgba( 255, 255, 255, 0.01 );
   backdrop-filter: blur( 50px );
  -webkit-backdrop-filter: blur( 50px );
   border-radius: 10px;
@@ -639,7 +639,7 @@ span + span {
   width: 100%;
   padding: 3rem;
   position: relative;
-  background: rgba( 255, 255, 255, 0.05 );
+  background: rgba( 255, 255, 255, 0.01 );
   backdrop-filter: blur( 50px );
  -webkit-backdrop-filter: blur( 50px );
   border-radius: 10px;
