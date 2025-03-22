@@ -5,8 +5,8 @@
     z-index: 2;
 }
 .header img{
-    width: 12rem;
-    height: 4rem;
+    width: 10rem;
+    height: 3rem;
 }
 
 nav.nav_menu {
@@ -139,7 +139,7 @@ div.btn {
     margin-right: 3rem;
     transition: .2s;
     border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
-    border-radius: 5px;
+    border-radius: 1px;
     font-size: 1.5rem;
     padding: 12px 60px;
 }
@@ -162,7 +162,7 @@ div.btn {
     margin: 2rem 0;
     cursor: pointer;
     padding: 12px 60px;
-    border-radius: 5px;
+    border-radius: 1px;
     overflow: hidden;
 }
 
@@ -216,7 +216,7 @@ div.btn {
     background: rgba( 255, 255, 255, 0.05 );
     backdrop-filter: blur( 50px );
    -webkit-backdrop-filter: blur( 50px );
-    border-radius: 10px;
+    border-radius: 1px;
     border: 1px solid rgba(255, 255, 255, 0.18);
     min-width: 680px;
     max-width: 680px;
