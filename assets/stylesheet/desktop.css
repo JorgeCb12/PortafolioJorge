@@ -4,6 +4,10 @@
     padding: .8rem 3rem;
     z-index: 2;
 }
+.header img{
+    width: 12rem;
+    height: 4rem;
+}
 
 nav.nav_menu {
     display: flex;
@@ -78,8 +82,8 @@ div.btn {
 
 .image_home {
     object-fit: contain;
-    max-width: 32rem;
-    max-height: 32rem;
+    max-width: 38rem;
+    max-height: 38rem;
 }
 
 

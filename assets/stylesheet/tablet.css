@@ -1,4 +1,8 @@
 /* Header */
+.header img{
+    width: 12rem;
+    height: 4rem;
+}
 
 nav.nav_menu.active {
     width: 50%;
@@ -44,6 +48,24 @@ nav.nav_menu.active {
 .cards_container--habilidades {
     column-gap: 4rem;
 }
+.cards_container--habilidades {
+    grid-template-columns: 13rem 13rem 13rem;
+    grid-template-rows: 14rem 14rem;
+    padding: 0;
+    margin-top: 2rem;
+}
+.fond-habilidades {
+    background: rgba( 255, 255, 255, 0.05 );
+    backdrop-filter: blur( 50px );
+   -webkit-backdrop-filter: blur( 50px );
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    min-width: 650px;
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 40px 40px;
+   
+  }
 
 /* Formación */
 
@@ -60,6 +82,7 @@ nav.nav_menu.active {
 
 .cards_container--proyectos {
     grid-template-columns: repeat(2, 1fr);
+    width: 100%;
     gap: 20px;
     padding: 20px;
 }
@@ -80,5 +103,5 @@ nav.nav_menu.active {
 /* Contacto */
 .container--contacto {
     margin: 0 auto;
-    width: 80%;
+    width: 60%;
 }
