@@ -8,6 +8,10 @@
     <meta name="robots" content="index,follow">
 
     <title>Jorge Corrales | Desarrollador Web Front-End</title>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+      emailjs.init('_QhI11W0bxNc4mstG'); // Formato simple para tu clave
+    </script>
 
     <!-- Librerías -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -60,7 +64,7 @@
         <!-- Home -->
         <section class="home" id="home">
             <picture class="container_image-home" data-aos="zoom-in"> 
-                <img  class="image_home " src="./assets/images/users.svg" alt="Foto Perfil">
+                <img  class="image_home " src="./assets/images/Perfil.png" alt="Foto Perfil">
             </picture>
             
             <div class="home_info">
@@ -344,19 +348,20 @@
                         <p data-section="contacto" data-value="text">Completa el siguiente formulario y me pondré en contacto contigo lo antes posible.</p>
                     </div>
     
-                    <form id="form" class="form-contact" name="contacto-portafolio" netlify>
-                        <input id="nombre" type="text" name="name" placeholder="Nombre(Name)" required>
-                        <input id="email" type="email" name="email" placeholder="E-mail" required>
-                        <input id="asunto" type="text" name="affair" placeholder="Asunto" required>
-                        <textarea id="mensaje" cols="20" rows="4" name="message" placeholder="Mensaje" required></textarea>
-    
-                        <div class="btn_form--contacto">
-                            <button id="btn-enviar" type="submit" data-section="contacto" data-value="btn-enviar">Enviar</button>
-                        </div>
+                    <form id="form" class="form-contact">
+                            <input type="text" name="nombre" placeholder="Nombre(Name)" id="nombre" required>
+                            <input type="email" name="email" id="email" placeholder="E-mail" required>
+                            <input type="text" name="asunto" id="asunto" placeholder="Asunto" required>
+                            <textarea name="mensaje" id="mensaje" placeholder="Mensaje" required></textarea>
+                            <div class="btn_form--contacto">
+                        <input type="submit" id="button" class="contact-button" value="Enviar Mensaje">
+                         </div>
                     </form>
+
                 </div>
             </div>
         </section>
+                        
     </main>
 
     <footer>
@@ -386,5 +391,6 @@
 
     <!-- Mi script -->
     <script src="./script.js"></script>
+    <script src="./contacto.js"></script>
 </body>
 </html>
