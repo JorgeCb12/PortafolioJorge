@@ -120,9 +120,9 @@ nav.nav_menu.active a.active {
 
 .container_icons--proyectos {
     display: flex;
-    flex-direction: column;
-    align-items: center; /* Centrar horizontalmente */
-    gap: 10px;
+    align-items: center; /* Alinear íconos y texto verticalmente */
+    gap: 10px; /* Espacio entre el texto y los íconos */
+    justify-content: center; /* Centrar horizontalmente */
     margin-top: 1rem; /* Ajustar espacio superior */
 }
 
@@ -130,8 +130,7 @@ nav.nav_menu.active a.active {
     font-size: 1.4rem;
     color: var(--white);
     font-family: 'Cooper Hewitt';
-    margin-bottom: 8px;
-    text-align: center; /* Centrar el texto del título */
+    margin: 0; /* Eliminar margen inferior */
 }
 
 .container_icons--proyectos img {

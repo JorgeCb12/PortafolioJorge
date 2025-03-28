@@ -343,26 +343,22 @@ div.btn {
 
 .container_icons--proyectos {
     display: flex;
-    flex-direction: column;
-    align-items: flex-start; /* Alinear a la izquierda */
-    gap: 10px; /* Reducir espacio entre el título y los íconos */
-    margin-bottom: 25px; /* Aumentar espacio entre los íconos y los botones */
-    margin-left: 2rem; /* Margen izquierdo */
-    margin-top: 0; /* Subir las tecnologías usadas */
+    align-items: center; /* Alinear íconos y texto verticalmente */
+    gap: 10px; /* Espacio entre el texto y los íconos */
+    justify-content: center; /* Centrar horizontalmente */
+    margin-top: 1rem; /* Ajustar espacio superior */
 }
 
 .container_icons--proyectos h3 {
-    font-size: 1.8rem; /* Tamaño adecuado para el título */
+    font-size: 1.8rem; /* Tamaño adecuado para el texto */
     color: var(--white);
     font-family: 'Cooper Hewitt';
-    text-align: left; /* Alinear el texto del título a la izquierda */
-    margin-bottom: 5px; /* Reducir espacio debajo del título */
+    margin: 0; /* Eliminar margen inferior */
 }
 
 .container_icons--proyectos img {
-    width: 30px; /* Tamaño adecuado para los íconos */
-    height: 30px;
-    margin-right: 10px; /* Espacio entre los íconos */
+    width: 25px; /* Tamaño adecuado para los íconos */
+    height: 25px;
 }
 
 .container_icons--proyectos div {
