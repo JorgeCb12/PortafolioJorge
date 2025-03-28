@@ -3,6 +3,7 @@
     justify-content: space-between;
     padding: .8rem 3rem;
     z-index: 2;
+    background-color: var(--fond); /* Fondo consistente */
 }
 .header img{
     width: 10rem;
@@ -78,17 +79,20 @@ div.btn {
     position: relative;
     justify-content: center;
     align-items: center;
+    margin-top: 4rem; /* Bajar más la imagen */
 }
 
 .image_home {
-    object-fit: contain;
-    max-width: 36rem;
-    max-height: 36rem;
+    object-fit: cover; /* Asegurar que la imagen se ajuste correctamente */
+    width: 36rem; /* Asegurar que el ancho y alto sean iguales */
+    height: 36rem;
+    border-radius: 50%; /* Hacer la imagen perfectamente redonda */
+    background-position: center;
+    background-size: cover; /* Asegurar que la imagen cubra el contenedor */
+    background-size: cover;
 }
-
-
 .home_info {
-    width: 40%;
+    width: 50%;
     padding-left: 8rem;
 }
 
@@ -294,22 +298,89 @@ div.btn {
 
 .cards--proyectos {
     width: 32rem;
-    height: 38rem;
+    height: 45rem; /* Aumentar la altura de la tarjeta */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     margin: 0 1.5rem;
     z-index: 1;
+    position: relative;
+    overflow: hidden; /* Evitar que el contenido se salga de la tarjeta */
+    border: 1px solid rgba(255, 255, 255, 0.2); /* Añadir un borde para mayor claridad */
+    border-radius: 8px; /* Bordes redondeados */
+    background: rgba(255, 255, 255, 0.01); /* Fondo translúcido */
+}
+
+.container_imgCard--proyectos img {
+    width: 100%;
+    height: auto; /* Mantener la proporción de la imagen */
+    object-fit: cover; /* Asegurar que la imagen se ajuste correctamente */
+    border-radius: 8px 8px 0 0; /* Bordes redondeados solo en la parte superior */
+}
+
+.container_textCard--proyectos {
+    padding: 1rem 2rem; /* Añadir espacio interno para el texto */
+    margin-bottom: 1rem; /* Ajustar espacio debajo del texto */
+    margin-top: 0.5rem; /* Subir la descripción */
+}
+
+.container_textCard--proyectos h2 {
+    font-family: "Cooper Hewitt";
+    letter-spacing: 0.1rem;
+    font-size: 1.8rem;
+    color: var(--white);
+    font-weight: bold;
+    display: inline;
+    margin-bottom: 1.5rem; /* Mantener un poco de espacio entre el título y la descripción */
+}
+
+.card_portafolio .container_textCard--proyectos {
+    margin-bottom: 45px;/* Reducir el espacio debajo de la descripción */
+    position: relative;
+    top: 40px;
+
+}
+
+.container_icons--proyectos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinear a la izquierda */
+    gap: 10px; /* Reducir espacio entre el título y los íconos */
+    margin-bottom: 25px; /* Aumentar espacio entre los íconos y los botones */
+    margin-left: 2rem; /* Margen izquierdo */
+    margin-top: 0; /* Subir las tecnologías usadas */
+}
+
+.container_icons--proyectos h3 {
+    font-size: 1.8rem; /* Tamaño adecuado para el título */
+    color: var(--white);
+    font-family: 'Cooper Hewitt';
+    text-align: left; /* Alinear el texto del título a la izquierda */
+    margin-bottom: 5px; /* Reducir espacio debajo del título */
+}
+
+.container_icons--proyectos img {
+    width: 30px; /* Tamaño adecuado para los íconos */
+    height: 30px;
+    margin-right: 10px; /* Espacio entre los íconos */
+}
+
+.container_icons--proyectos div {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los íconos se ajusten en varias filas si es necesario */
+    gap: 10px; /* Espacio entre los íconos */
 }
 
 .text-portafolio {
     margin-top: -3rem;
 }
 
-.container_btn--proyectos button {
-    width: auto;
-    padding-left: 3rem;
-    padding-right: 3rem;
+.container_btn--proyectos {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0; /* Ajustar espacio debajo de los botones */
+    position: relative;
+    bottom: 0; /* Ajustar posición para que no quede demasiado abajo */
 }
 
 /* Contacto */

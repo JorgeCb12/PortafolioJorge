@@ -3,16 +3,34 @@
     width: 10rem;
     height: 3rem;
 }
+.header {
+    background-color: var(--fond);
+}
 
 nav.nav_menu.active {
     width: 50%;
     margin-left: 50%;
     top: 5.9rem;
+    background-color: var(--fond); /* Fondo consistente */
+    color: var(--white); /* Texto visible */
 }
+
+nav.nav_menu.active a {
+    color: var(--white) !important; /* Forzar el color blanco del texto */
+}
+
+nav.nav_menu.active a:hover,
+nav.nav_menu.active a.active {
+    color: var(--Primary) !important; /* Forzar el color primario al pasar el cursor o estar activo */
+}
+
 .image_home {
-    max-width: 30rem;
-    max-height: 30rem;
-    border-radius: 50%;
+    object-fit: cover; /* Asegurar que la imagen se ajuste correctamente */
+    width: 36rem; /* Igual que en desktop */
+    height: 36rem;
+    border-radius: 50%; /* Hacer la imagen perfectamente redonda */
+    background-position: center;
+    background-size: cover; /* Asegurar que la imagen cubra el contenedor */
 }
 
 .container_text-info {
@@ -100,8 +118,41 @@ nav.nav_menu.active {
     width: 20.6rem;
 }
 
+.container_icons--proyectos {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrar horizontalmente */
+    gap: 10px;
+    margin-top: 1rem; /* Ajustar espacio superior */
+}
+
+.container_icons--proyectos h3 {
+    font-size: 1.4rem;
+    color: var(--white);
+    font-family: 'Cooper Hewitt';
+    margin-bottom: 8px;
+    text-align: center; /* Centrar el texto del título */
+}
+
+.container_icons--proyectos img {
+    width: 20px;
+    height: 20px;
+}
+
 /* Contacto */
 .container--contacto {
     margin: 0 auto;
     width: 60%;
+}
+
+.container_image-home {
+    width: 55%;
+    padding-right: -4rem;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem; /* Igual que en desktop */
+    display: flex; /* Asegurar que el contenedor use flexbox */
+    margin-left: auto; /* Centrar horizontalmente */
+    margin-right: auto; /* Centrar horizontalmente */
 }

@@ -42,8 +42,11 @@ html::-webkit-scrollbar-thumb {
 
 /* Header */
 
+body {
+  background-color: var(--fond);
+}
 .header {
-  background-color: transparent;
+  background-color: var(--fond);
   padding: 0.8rem 3rem;
   display: flex;
   justify-content: space-between;
@@ -58,7 +61,8 @@ html::-webkit-scrollbar-thumb {
 
 .header.abajo {
   backdrop-filter: blur(15px);
-  background: rgba(41, 41, 41, 0.3);
+  background: var(--fond); /* Asegurar fondo consistente */
+  background-color: var(--fond);
 }
 .header img{
   width: 10rem;
@@ -76,7 +80,8 @@ nav.nav_menu.active {
   top: 6.3rem;
   width: 100%;
   height: auto;
-  background-color: var(--white);
+  background-color: var(--fond); /* Fondo consistente */
+  color: var(--white); /* Texto visible */
   box-shadow: 0 10px 16px -6px rgb(5 5 5 / 30%),
     0 25px 10px -24px rgb(5 5 5 / 10%);
   animation: ease 0.4s left forwards;
@@ -95,7 +100,7 @@ nav.nav_menu.active a {
   font-family: "Cooper Hewitt";
   letter-spacing: 0.1rem;
   text-decoration: none;
-  color: var(--fond);
+  color: var(--white) !important; /* Forzar el color blanco del texto */
   font-size: 2rem;
   width: 100%;
   text-align: center;
@@ -103,9 +108,7 @@ nav.nav_menu.active a {
 
 nav.nav_menu.active a:hover,
 nav.nav_menu.active a.active {
-  color: var(--beaver);
-  background-color: var(--Primary);
-  transition: all 0.4s;
+  color: var(--Primary) !important; /* Forzar el color primario al pasar el cursor o estar activo */
 }
 
 nav.nav_menu.not-active a {
@@ -288,16 +291,13 @@ span + span {
   display: flex;
   justify-content: center;
   padding: 8rem 0 3rem 0; /* Ajustar el padding para centrar más el contenido */
+  margin-top: 6rem; /* Bajar más la imagen */
 }
 
 .image_home {
-  max-width: 65%;
-  transition: 0.4s;
-  animation: image 2s;
-  border-radius: 50%;
-  max-width: 28rem;
-  max-height: 28em;
-  transition: 1s;
+  width: 28rem; /* Asegurar que el ancho y alto sean iguales */
+  height: 28rem;
+  border-radius: 50%; /* Hacer la imagen perfectamente redonda */
 }
 
 .home_info {
@@ -559,14 +559,14 @@ span + span {
   background: rgba( 255, 255, 255, 0.01 );
   backdrop-filter: blur( 50px );
  -webkit-backdrop-filter: blur( 50px );
-  border-radius: 1px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px; /* Bordes redondeados */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Añadir un borde para mayor claridad */
   margin-bottom: 1.8rem;
   padding: 10px;
   min-width: 30rem;
   max-width: 38rem;
   position: relative;
-  overflow: hidden;
+  overflow: hidden; /* Evitar que el contenido se salga */
   transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
@@ -582,6 +582,9 @@ span + span {
 
 .container_imgCard--proyectos img {
   width: 100%;
+  height: auto; /* Mantener la proporción de la imagen */
+  object-fit: cover; /* Asegurar que la imagen se ajuste correctamente */
+  border-radius: 8px 8px 0 0; /* Bordes redondeados solo en la parte superior */
 }
 
 .container_textCard--proyectos {
@@ -596,6 +599,7 @@ span + span {
   color: var(--white);
   font-weight: bold;
   display: inline;
+  margin-bottom: 1rem;
 }
 
 .container_textCard--proyectos p {
@@ -603,13 +607,13 @@ span + span {
   font-family: "Cooper Hewitt";
   letter-spacing: 0.1rem;
   font-size: 1.4rem;
-  margin-top: 1rem;
+  padding-top: 10px;
 }
 
 .container_btn--proyectos {
   display: flex;
   justify-content: center;
-  padding-bottom: 20px;
+  padding-bottom: 40px; /* Aumentar espacio debajo de los botones */
 }
 
 .container_btn--proyectos a {
@@ -665,6 +669,27 @@ span + span {
   background: var(--Primary);
   box-shadow: 0px 13px 33px -14px rgba(0, 0, 0, 0.75);
   transition: all 0.4s ease;
+}
+
+.container_icons--proyectos {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar horizontalmente */
+  gap: 10px;
+  margin-top: 1rem; /* Ajustar espacio superior */
+}
+
+.container_icons--proyectos h3 {
+  font-size: 1.4rem;
+  color: var(--white);
+  font-family: 'Cooper Hewitt';
+  margin-bottom: 8px;
+  text-align: center; /* Centrar el texto del título */
+}
+
+.container_icons--proyectos img {
+  width: 20px;
+  height: 20px;
 }
 
 /* Experiencia */
