@@ -425,7 +425,7 @@ span + span {
   background: rgba( 255, 255, 255, 0.01 );
   backdrop-filter: blur( 50px );
  -webkit-backdrop-filter: blur( 50px );
-  border-radius: 1px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 400px;
@@ -511,13 +511,13 @@ span + span {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(204, 243, 129, 0.2) 0%, rgba(204, 243, 129, 0) 100%);
-  opacity: 0;
+  background: linear-gradient(135deg, rgba(103, 102, 102, 0.2) 0%, rgba(204, 243, 129, 0) 100%);
+  opacity: 8;
   transition: opacity 0.3s ease;
 }
 
 .cards--habilidades:hover::before {
-  opacity: 1;
+  opacity: 8;
 }
 
 .cards--habilidades img {
@@ -711,6 +711,7 @@ span + span {
 .experiencia h1 {
     text-align: center;
     font-size: 2.4rem;
+    font-family: "Cooper Hewitt";
     color: var(--Primary);
     margin-bottom: 2rem; /* Ajustar espacio debajo del título */
     padding: 6rem 0 2rem 0; /* Ajustar espacio superior */
@@ -748,7 +749,7 @@ span + span {
     font-size: 1.6rem; /* Aumentar tamaño para mejor legibilidad */
     color: var(--white);
     line-height: 2.4rem; /* Incrementar el espacio entre líneas */
-    text-align: justify; /* Justificar el texto */
+    text-align: start; /* Justificar el texto */
     margin: 0 auto; /* Centrar el texto */
     max-width: 85%; /* Limitar el ancho del texto */
     word-wrap: break-word; /* Ajustar texto largo */
@@ -813,7 +814,7 @@ span + span {
   background: rgba( 255, 255, 255, 0.01 );
   backdrop-filter: blur( 50px );
  -webkit-backdrop-filter: blur( 50px );
-  border-radius: 1px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   box-shadow: 0px 10px 20px #00000020;
 }
