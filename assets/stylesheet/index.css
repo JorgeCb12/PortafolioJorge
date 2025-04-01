@@ -6,7 +6,7 @@
 
 :root {
   --Primary: #ccf381;
-  --fond: #161618;
+  --fond: #101010;
   --white: #ffffff;
   --black: #1e1e1e;
 }
@@ -566,11 +566,11 @@ span + span {
 
 .cards--proyectos {
   padding-bottom: 10rem;
-  background: rgba( 255, 255, 255, 0.01 );
+  background: #191919;
   backdrop-filter: blur( 50px );
  -webkit-backdrop-filter: blur( 50px );
   border-radius: 8px; /* Bordes redondeados */
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Añadir un borde para mayor claridad */
+  border: 1px solid rgba(255, 255, 255, 0.060); /* Añadir un borde para mayor claridad */
   margin-bottom: 1.8rem;
   padding: 10px;
   min-width: 30rem;
@@ -594,7 +594,6 @@ span + span {
   width: 100%;
   height: auto; /* Mantener la proporción de la imagen */
   object-fit: cover; /* Asegurar que la imagen se ajuste correctamente */
-  border-radius: 8px 8px 0 0; /* Bordes redondeados solo en la parte superior */
 }
 
 .container_textCard--proyectos {

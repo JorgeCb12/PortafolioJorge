@@ -26,8 +26,8 @@ nav.nav_menu.active a.active {
 
 .image_home {
     object-fit: cover; /* Asegurar que la imagen se ajuste correctamente */
-    width: 36rem; /* Igual que en desktop */
-    height: 36rem;
+    width: 30rem; /* Igual que en desktop */
+    height: 30rem;
     border-radius: 50%; /* Hacer la imagen perfectamente redonda */
     background-position: center;
     background-size: cover; /* Asegurar que la imagen cubra el contenedor */
@@ -59,6 +59,12 @@ nav.nav_menu.active a.active {
     padding: .68rem 2rem;
     width: 240px;
     text-align: center;
+}
+
+/* Home */
+
+.container_parrafo-info {
+    display: none; /* Ocultar en pantallas medianas */
 }
 
 /* Habilidades */

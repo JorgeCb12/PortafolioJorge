@@ -1,3 +1,24 @@
+/* General */
+
+body {
+    background: linear-gradient(135deg, #1e1e2f, #2c2c54); /* Fondo degradado profesional */
+    color: var(--white); /* Texto en blanco para contraste */
+    font-family: 'Cooper Hewitt', sans-serif; /* Fuente consistente */
+    margin: 0;
+    padding: 0;
+}
+
+.main-container {
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido para resaltar contenido */
+    backdrop-filter: blur(10px); /* Efecto de desenfoque */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilidad con Safari */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+    padding: 3rem; /* Espaciado interno */
+    max-width: 1200px; /* Ancho máximo del contenido */
+    margin: 2rem auto; /* Centrar el contenido */
+}
+
 /* Header */
 .header {
     justify-content: space-between;
@@ -68,89 +89,90 @@ div.btn {
 
 .home {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column; /* Mantener disposición vertical */
+    align-items: center; /* Centrar los elementos horizontalmente */
     padding-bottom: 4rem;
-    height: 100vh;
+    height: auto; /* Ajustar la altura automáticamente */
 }
 
 .container_image-home {
-    width: 55%;
-    padding-right: -4rem;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    margin-top: 4rem; /* Bajar más la imagen */
+    width: 100%; /* Ajustar el ancho al 100% */
+    padding-right: 0; /* Eliminar el padding derecho */
+    margin-top: 2rem; /* Reducir el margen superior */
+    display: flex;
+    justify-content: center; /* Centrar la imagen horizontalmente */
 }
 
 .image_home {
-    object-fit: cover; /* Asegurar que la imagen se ajuste correctamente */
-    width: 36rem; /* Asegurar que el ancho y alto sean iguales */
-    height: 36rem;
-    border-radius: 50%; /* Hacer la imagen perfectamente redonda */
-    background-position: center;
-    background-size: cover; /* Asegurar que la imagen cubra el contenedor */
-    background-size: cover;
+    object-fit: cover;
+    width: 30rem; /* Incrementar el tamaño de la imagen */
+    height: 30rem;
+    border-radius: 50%;
+    border: 5px solid rgba(255, 255, 255, 0.2); /* Borde para resaltar la imagen */
 }
+
 .home_info {
-    width: 50%;
-    padding-left: 8rem;
+    width: 100%; /* Ajustar el ancho al 100% */
+    padding-left: 0; /* Eliminar el padding izquierdo */
+    text-align: center; /* Centrar el texto */
 }
 
 .container_text-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    letter-spacing: .2rem;
-    text-align: start;
-    margin-top: 6rem;
+    margin-top: 2rem; /* Reducir el margen superior */
+    align-items: center; /* Centrar los elementos */
 }
 
 .home_text-2 {
-    font-size: 8rem;
+    font-size: 7rem; /* Ajustar el tamaño del texto */
+    width: auto; /* Ajustar el ancho automáticamente */
     font-weight: bold;
-    color: var(--Primary);
-    width: 150%;
+    color: var(--Primary); /* Color primario para destacar */
 }
 
 .home_text-3 {
-    margin: 0 0 2rem 0;
-    font-size: 4rem;
-    width: 45rem;
-    letter-spacing: .2rem;
+    font-size: 3.2rem; /* Ajustar el tamaño del texto */
+    width: auto; /* Ajustar el ancho automáticamente */
+    margin-bottom: 1rem; /* Añadir espacio debajo del texto */
+    color: var(--white); /* Texto en blanco */
+    font-weight: 100; /* Peso de fuente ligero */
+    letter-spacing: 0.1rem; /* Espaciado entre letras */
+    line-height: 4rem; /* Altura de línea para mejor legibilidad */
+    max-width: 600px; /* Limitar el ancho del contenedor */
+    margin: 0 auto; /* Centrar horizontalmente el contenedor */
+    text-align: left; /* Centrar el texto */
+    font-family: 'Cooper Hewitt', sans-serif; /* Fuente consistente */
+    padding: 0 2rem; /* Espacio interno para evitar que el texto toque los bordes */
+    margin-top: 1rem; /* Espacio superior */
+    margin-bottom: 2rem; /* Espacio inferior */
 }
 
 .container_parrafo-info {
-    display: inline-block;
-    text-align: start;
+    display: block; /* Asegurar que sea visible */
+    text-align: left; /* Alinear el texto a la izquierda */
+    margin: 0 auto; /* Centrar horizontalmente el contenedor */
+    margin-top: 1rem; /* Espacio superior */
+    margin-bottom: 2rem; /* Espacio inferior */
+    font-family: 'Cooper Hewitt', sans-serif; /* Fuente consistente */
+    font-size: 2.1rem; /* Tamaño de fuente ligeramente más grande */
+    color: var(--white); /* Color del texto */
+    line-height: 2.8rem; /* Altura de línea para mejor legibilidad */
+    font-weight: 100; /* Peso de fuente ligero */
+    letter-spacing: 0.1rem; /* Espaciado entre letras */
+    max-width: 600px; /* Limitar el ancho del contenedor */
 }
 
 .container_parrafo-info p {
-    font-family: 'Cooper Hewitt';
-    color: var(--white);
-    font-size: 2.4rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    line-height: 3.2rem;
+    margin-bottom: 1rem; /* Espacio entre las dos partes del texto */
 }
 
-.container_button {
-    display: flex;
+/* Asegurarse de que no esté oculta en desktop */
+@media (min-width: 1024px) {
+    .container_parrafo-info {
+        display: block; /* Visible en pantallas grandes */
+    }
 }
 
-.cv_button {
-    background: transparent;
-    color: var(--white);
-    margin-right: 3rem;
-    transition: .2s;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
-    border-radius: 8px;
-    font-size: 1.5rem;
-    padding: 12px 60px;
-}
-
-.course {
-    margin: 0;
-}
+/* Botón de contacto */
 
 .contact_button {
     display: inline-block;
@@ -160,14 +182,17 @@ div.btn {
     font-family: 'Cooper Hewitt';
     background: transparent;
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     text-transform: uppercase;
     letter-spacing: .1rem;
     margin: 2rem 0;
     cursor: pointer;
-    padding: 12px 60px;
+    padding: 8px 60px; /* Tamaño igual al botón de descargar */
     border-radius: 8px;
     overflow: hidden;
+    text-align: center;
+    width: 240px; /* Ancho consistente */
+    text-align: center;
 }
 
 .contact_button span {
@@ -196,18 +221,49 @@ div.btn {
 }
 
 .links {
-    width: 5%;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0 3rem 40rem 3rem;
+    width: auto; /* Ajustar el ancho automáticamente */
+    display: flex; /* Organizar los links en una disposición horizontal */
+    flex-direction: row; /* Alinear los links en una fila */
+    justify-content: center; /* Centrar los links horizontalmente */
+    gap: 1rem; /* Espacio entre los links */
+    padding: 0;
 }
 
 .links img {
-    margin: .7rem 0 .7rem 0;
+    margin: 0; /* Eliminar márgenes */
 }
 
-.links .icon-CodePen {
-    margin: .7rem 0 .7rem .2rem;
+.container_icons--proyectos {
+    display: flex;
+    flex-direction: column; /* Organizar los íconos en una disposición vertical */
+    align-items: center; /* Centrar los íconos */
+    gap: 1rem; /* Espacio entre los íconos */
+    margin-top: 1rem; /* Ajustar espacio superior */
+}
+
+.container_icons--proyectos h3 {
+    font-size: 1.8rem; /* Tamaño adecuado para el texto */
+    color: var(--white);
+    font-family: 'Cooper Hewitt';
+    margin: 0; /* Eliminar margen inferior */
+}
+
+.container_icons--proyectos img {
+    width: 30px; /* Tamaño adecuado para los íconos */
+    height: 30px;
+}
+
+.container_icons--proyectos div {
+    display: flex;
+    flex-wrap: wrap; /* Permitir que los íconos se ajusten en varias filas si es necesario */
+    gap: 10px; /* Espacio entre los íconos */
+}
+
+.container_icons--proyectos p {
+    font-size: 1.6rem; /* Tamaño adecuado para la descripción */
+    color: var(--white);
+    text-align: center; /* Centrar la descripción */
+    margin-top: 0.5rem; /* Espacio entre íconos y descripción */
 }
 
 /* Habilidades */
@@ -306,9 +362,9 @@ div.btn {
     z-index: 1;
     position: relative;
     overflow: hidden; /* Evitar que el contenido se salga de la tarjeta */
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Añadir un borde para mayor claridad */
+    border: 1px solid rgba(255, 255, 255, 0.060); /* Añadir un borde para mayor claridad */
     border-radius: 8px; /* Bordes redondeados */
-    background: rgba(255, 255, 255, 0.01); /* Fondo translúcido */
+    background: #191919; /* Fondo translúcido */
 }
 
 .container_imgCard--proyectos img {
@@ -316,6 +372,13 @@ div.btn {
     height: auto; /* Mantener la proporción de la imagen */
     object-fit: cover; /* Asegurar que la imagen se ajuste correctamente */
     border-radius: 8px 8px 0 0; /* Bordes redondeados solo en la parte superior */
+}
+
+.card_portafolio .container_textCard--proyectos {
+    margin-bottom: 45px;/* Reducir el espacio debajo de la descripción */
+    position: relative;
+    top: 40px;
+
 }
 
 .container_textCard--proyectos {
@@ -332,13 +395,6 @@ div.btn {
     font-weight: bold;
     display: inline;
     margin-bottom: 1.5rem; /* Mantener un poco de espacio entre el título y la descripción */
-}
-
-.card_portafolio .container_textCard--proyectos {
-    margin-bottom: 45px;/* Reducir el espacio debajo de la descripción */
-    position: relative;
-    top: 40px;
-
 }
 
 .container_icons--proyectos {
