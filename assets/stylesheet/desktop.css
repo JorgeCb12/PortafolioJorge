@@ -176,29 +176,29 @@ div.btn {
 /* Botón de contacto */
 
 .contact_button {
-    display: inline-block;
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
+    border: 2px solid var(--Primary);
     color: var(--white);
-    font-family: 'Cooper Hewitt';
+    font-family: "Cooper Hewitt";
     background: transparent;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     text-transform: uppercase;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
     margin: 2rem 0;
     cursor: pointer;
-    padding: 8px 60px; /* Tamaño igual al botón de descargar */
+    padding: 8px 60px;
     border-radius: 8px;
     overflow: hidden;
+    width: 280px;
     text-align: center;
-    width: 240px; /* Ancho consistente */
-    text-align: center;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .contact_button span {
     position: relative;
     z-index: 2;
+    transition: color 0.5s ease;
 }
 
 .contact_button::after {
@@ -209,8 +209,8 @@ div.btn {
     z-index: 1;
     top: 0;
     left: -100%;
-    background: var(--Primary);
-    transition: left .4s ease-in-out;
+    background: rgba(204, 243, 129, 0.7);
+    transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .contact_button:hover::after {
@@ -219,6 +219,8 @@ div.btn {
 
 .contact_button:hover {
     color: #000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(204, 243, 129, 0.3);
 }
 
 .links {
@@ -366,6 +368,32 @@ div.btn {
     border: 1px solid rgba(255, 255, 255, 0.060); /* Añadir un borde para mayor claridad */
     border-radius: 8px; /* Bordes redondeados */
     background: #191919; /* Fondo translúcido */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición suave con curva personalizada */
+}
+
+.cards--proyectos:hover {
+    filter: saturate(100%);
+    border: 1px solid var(--beaver);
+    transform: translateY(-5px) scale(1.03); /* Efecto de elevación y escala */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.cards--proyectos::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(204, 243, 129, 0.1) 0%, rgba(204, 243, 129, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cards--proyectos:hover::before {
+    opacity: 1;
 }
 
 .container_imgCard--proyectos img {

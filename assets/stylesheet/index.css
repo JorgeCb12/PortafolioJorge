@@ -295,19 +295,92 @@ span + span {
 }
 
 .image_home {
-  width: 28rem; /* Asegurar que el ancho y alto sean iguales */
+  width: 28rem;
   height: 28rem;
-  border-radius: 50%; /* Hacer la imagen perfectamente redonda */
-  object-fit: cover; /* Ajustar la imagen correctamente */
+  border-radius: 50%;
+  object-fit: cover;
   background-position: center;
   background-size: cover;
-  margin: 0 auto; /* Centrar la imagen horizontalmente */
-  border: 3px solid rgba(255, 255, 255, 0.1); /* Borde más sutil */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+  margin: 0 auto;
+  border: 3px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.image_home::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(204, 243, 129, 0.4) 0%, rgba(204, 243, 129, 0) 100%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.image_home::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid var(--Primary);
+  transform: scale(1.1);
+  opacity: 0;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .image_home:hover {
-  transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 15px 30px rgba(204, 243, 129, 0.3);
+}
+
+.image_home:hover::before {
+  opacity: 1;
+  animation: gradientShift 3s infinite alternate;
+}
+
+.image_home:hover::after {
+  opacity: 1;
+  transform: scale(1);
+  animation: pulse 2s infinite alternate;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+    border-color: var(--Primary);
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.6;
+    border-color: rgba(204, 243, 129, 0.7);
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0.4;
+    border-color: var(--Primary);
+  }
+}
+
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(135deg, rgba(204, 243, 129, 0.4) 0%, rgba(204, 243, 129, 0) 100%);
+  }
+  50% {
+    background: linear-gradient(225deg, rgba(204, 243, 129, 0.4) 0%, rgba(204, 243, 129, 0) 100%);
+  }
+  100% {
+    background: linear-gradient(315deg, rgba(204, 243, 129, 0.4) 0%, rgba(204, 243, 129, 0) 100%);
+  }
 }
 
 .home_info {
@@ -354,24 +427,28 @@ span + span {
 }
 .cv_button {
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.1); /* Bordes sutiles */
+  border: 2px solid var(--Primary);
   color: var(--white);
   font-family: "Cooper Hewitt";
   background: transparent;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   margin: 2rem 0;
   cursor: pointer;
-  padding: 8px 20px;
-  border-radius: 1px;
+  padding: 8px 60px;
+  border-radius: 8px;
   overflow: hidden;
+  width: 280px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .cv_button span {
   position: relative;
   z-index: 2;
+  transition: color 0.5s ease;
 }
 
 .cv_button::after {
@@ -382,19 +459,66 @@ span + span {
   z-index: 1;
   top: 0;
   left: -100%;
-  background: var(--Primary);
-  transition: left 0.4s ease-in-out;
+  background: rgba(204, 243, 129, 0.7);
+  transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .cv_button:hover::after {
   left: 0;
 }
+
 .cv_button:hover {
   color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(204, 243, 129, 0.3);
 }
 
 .contact_button {
-  display: none;
+  position: relative;
+  border: 2px solid var(--Primary);
+  color: var(--white);
+  font-family: "Cooper Hewitt";
+  background: transparent;
+  font-weight: bold;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin: 2rem 0;
+  cursor: pointer;
+  padding: 8px 60px;
+  border-radius: 8px;
+  overflow: hidden;
+  width: 280px;
+  text-align: center;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact_button span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s ease;
+}
+
+.contact_button::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: -100%;
+  background: rgba(204, 243, 129, 0.7);
+  transition: left 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.contact_button:hover::after {
+  left: 0;
+}
+
+.contact_button:hover {
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(204, 243, 129, 0.3);
 }
 
 .links {
@@ -447,7 +571,7 @@ span + span {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(204, 243, 129, 0.2) 0%, rgba(204, 243, 129, 0) 100%);
+  background: linear-gradient(135deg, rgba(204, 243, 129, 0.1) 0%, rgba(204, 243, 129, 0) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
 }
@@ -622,7 +746,12 @@ span + span {
 .container_btn--proyectos {
   display: flex;
   justify-content: center;
-  padding-bottom: 40px; /* Aumentar espacio debajo de los botones */
+  align-items: center;
+  padding: 1rem 0;
+  position: relative;
+  bottom: 0;
+  gap: 1.5rem;
+  width: 100%;
 }
 
 .container_btn--proyectos a {
@@ -642,42 +771,127 @@ span + span {
 }
 
 .btn_demo {
-  padding: 0.4rem 0;
-  border: none;
-  background: #f5f5f550;
-  color: var(--fond);
+  position: relative;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--Primary);
+  background: transparent;
+  color: var(--white);
+  font-family: "Cooper Hewitt";
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
   max-width: 120px;
-  border-radius: 4px;
 }
 
-.btn_repo {
-  padding: 0.4rem 0;
-  background: transparent;
-  border: none;
-  background: #f5f5f550;
-  max-width: 120px;
-  border-radius: 4px;
+.btn_demo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(204, 243, 129, 0.2);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
+}
+
+.btn_demo span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s ease;
 }
 
 .btn_demo img {
-  width: 2rem;
-  margin-right: 0.8rem;
+  width: 1.6rem;
+  margin-right: 0.6rem;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s ease;
+  filter: brightness(0) invert(1);
 }
 
-.container_btn--proyectos .btn_demo:hover {
-  box-shadow: 0px 13px 33px -14px rgba(0, 0, 0, 0.75);
-  transition: all 0.4s ease;
+.btn_demo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(204, 243, 129, 0.3);
+}
+
+.btn_demo:hover::before {
+  left: 0;
+}
+
+.btn_demo:hover img {
+  transform: translateX(3px);
+  filter: brightness(0) invert(0);
+}
+
+.btn_repo {
+  position: relative;
+  padding: 0.6rem 1.2rem;
+  border: 1px solid var(--Primary);
+  background: transparent;
+  color: var(--white);
+  font-family: "Cooper Hewitt";
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+  max-width: 120px;
+}
+
+.btn_repo::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(204, 243, 129, 0.2);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 1;
+}
+
+.btn_repo span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s ease;
 }
 
 .btn_repo img {
-  width: 2rem;
-  margin-right: 0.8rem;
+  width: 1.6rem;
+  margin-right: 0.6rem;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.5s ease;
 }
 
-.container_btn--proyectos .btn_repo:hover {
-  background: var(--Primary);
-  box-shadow: 0px 13px 33px -14px rgba(0, 0, 0, 0.75);
-  transition: all 0.4s ease;
+.btn_repo:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(204, 243, 129, 0.3);
+}
+
+.btn_repo:hover::before {
+  left: 0;
+}
+
+.btn_repo:hover img {
+  transform: translateX(3px);
 }
 
 .container_icons--proyectos {
@@ -734,6 +948,33 @@ span + span {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden; /* Evitar que el contenido se desborde */
     max-width: 100%; /* Asegurar que la tarjeta no exceda el ancho del contenedor */
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Transición suave con curva personalizada */
+    position: relative;
+}
+
+.cards--experiencia:hover {
+    filter: saturate(100%);
+    border: 1px solid var(--beaver);
+    transform: translateY(-5px) scale(1.03); /* Efecto de elevación y escala */
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+}
+
+.cards--experiencia::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(204, 243, 129, 0.1) 0%, rgba(204, 243, 129, 0) 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.cards--experiencia:hover::before {
+    opacity: 1;
 }
 
 .cards--experiencia h2 {
@@ -789,37 +1030,66 @@ span + span {
   height: auto;
   padding: 0 2rem 5rem 2rem;
   background-color: var(--fond);
+  position: relative;
+  overflow: hidden;
+}
+
+.contacto::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(204, 243, 129, 0.05) 0%, rgba(204, 243, 129, 0) 100%);
+  pointer-events: none;
 }
 
 .contacto h1 {
   display: block;
   text-align: center;
-  color: var(--fond);
+  color: var(--Primary);
   font-family: "Cooper Hewitt";
   font-size: 2.4rem;
   letter-spacing: 0.1rem;
   padding: 6rem 0 4rem 0;
-  color: #ccf381;
+  position: relative;
 }
 
-.container_img--contacto {
-  display: none;
+.contacto h1::after {
+  content: "";
+  position: absolute;
+  bottom: 3rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 2px;
+  background: var(--Primary);
+  opacity: 0.7;
 }
 
 .container--contacto {
   width: 100%;
   padding: 3rem;
   position: relative;
-  background: rgba( 255, 255, 255, 0.01 );
-  backdrop-filter: blur( 50px );
- -webkit-backdrop-filter: blur( 50px );
-  border-radius: 8px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  box-shadow: 0px 10px 20px #00000020;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
+  border-radius: 16px;
+  border: 1px solid rgba(204, 243, 129, 0.1);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.container--contacto:hover {
+  transform: translateY(-5px);
+  border-color: rgba(204, 243, 129, 0.2);
+  box-shadow: 0 15px 35px rgba(204, 243, 129, 0.1);
 }
 
 .container_text--contacto {
   width: 60%;
+  position: relative;
 }
 
 .container_text--contacto p {
@@ -830,61 +1100,59 @@ span + span {
   margin-bottom: 3rem;
   letter-spacing: 1px;
   line-height: 2.3rem;
+  opacity: 0.9;
 }
 
 .form-contact input {
   font-family: "Cooper Hewitt";
-  background: transparent;
+  background: rgba(255, 255, 255, 0.03);
   width: 100%;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordes sutiles */
-  padding: 1rem;
-  color: #fff;
+  border: 1px solid rgba(204, 243, 129, 0.1);
+  padding: 1.2rem;
+  color: var(--white);
   font-size: 1.6rem;
   outline: none;
   margin-bottom: 2rem;
-  border-radius: 4px;
+  border-radius: 8px;
   letter-spacing: 1px;
+  transition: all 0.3s ease;
+}
+
+.form-contact input:focus {
+  border-color: var(--Primary);
+  background: rgba(204, 243, 129, 0.05);
+  box-shadow: 0 0 15px rgba(204, 243, 129, 0.1);
 }
 
 .form-contact input::placeholder {
-  color: var(--white);
-}
-
-.form-contact .input-invalid {
-  border: 1px solid #574438;
-  color: #574438;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .form-contact textarea {
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordes sutiles */
-  padding: 1rem;
-  background: transparent;
+  border: 1px solid rgba(204, 243, 129, 0.1);
+  padding: 1.2rem;
+  background: rgba(255, 255, 255, 0.03);
   font-family: "Cooper Hewitt";
   width: 100%;
-  padding: 1rem;
-  border-radius: 1rem;
-  color: #fff;
+  border-radius: 8px;
+  color: var(--white);
   font-size: 1.6rem;
   outline: none;
   margin-bottom: 3rem;
   letter-spacing: 1px;
   resize: none;
+  transition: all 0.3s ease;
+  min-height: 150px;
+}
+
+.form-contact textarea:focus {
+  border-color: var(--Primary);
+  background: rgba(204, 243, 129, 0.05);
+  box-shadow: 0 0 15px rgba(204, 243, 129, 0.1);
 }
 
 .form-contact textarea::placeholder {
-  color: var(--light-grey);
-}
-
-.form-contact textarea::-webkit-scrollbar {
-  width: 8px;
-}
-
-.form-contact textarea::-webkit-scrollbar-track {
-  background-color: #776254;
-}
-
-.form-contact textarea::-webkit-scrollbar-thumb {
-  background-color: #574438;
+  color: rgba(255, 255, 255, 0.5);
 }
 
 .btn_form--contacto {
@@ -894,21 +1162,41 @@ span + span {
 
 .btn_form--contacto input {
   background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2); /* Bordes sutiles */
+  border: 1px solid var(--Primary);
   font-family: "Cooper Hewitt";
   width: 20rem;
-  padding: 0.8rem 1rem;
-  color: #fff;
+  padding: 1rem 2rem;
+  color: var(--white);
   font-size: 1.8rem;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: 0.5s all;
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn_form--contacto input::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(204, 243, 129, 0.2);
+  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
 .btn_form--contacto input:hover {
-  transform: scale(1.1);
-  box-shadow: 0px 9px 15px -1px rgba(0, 0, 0, 0.2);
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(204, 243, 129, 0.3);
+  color: var(--Primary);
 }
+
+.btn_form--contacto input:hover::before {
+  left: 0;
+}
+
 /* Footer */
 
 footer {
@@ -1044,6 +1332,10 @@ footer {
         min-width: auto;
         max-width: 100%;
     }
+
+    .contact_button {
+        display: none;
+    }
 }
 /* Estilos para tablet */
 @media (min-width: 760px) {
@@ -1070,4 +1362,20 @@ footer {
     .cards--experiencia p {
         font-size: 1.6rem;
     }
+}
+
+.container_button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 760px) {
+  .container_button {
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+  }
 }
