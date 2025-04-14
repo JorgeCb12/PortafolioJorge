@@ -303,84 +303,16 @@ span + span {
   background-size: cover;
   margin: 0 auto;
   border: 3px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.image_home::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(204, 243, 129, 0.4) 0%, rgba(204, 243, 129, 0) 100%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
-  z-index: 1;
-  pointer-events: none;
-}
-
+.image_home::before,
 .image_home::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  border: 3px solid var(--Primary);
-  transform: scale(1.1);
-  opacity: 0;
-  transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: none;
 }
 
 .image_home:hover {
-  transform: scale(1.05) rotate(2deg);
-  box-shadow: 0 15px 30px rgba(204, 243, 129, 0.3);
-}
-
-.image_home:hover::before {
-  opacity: 1;
-  animation: gradientShift 3s infinite alternate;
-}
-
-.image_home:hover::after {
-  opacity: 1;
-  transform: scale(1);
-  animation: pulse 2s infinite alternate;
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(1);
-    opacity: 0.8;
-    border-color: var(--Primary);
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.6;
-    border-color: rgba(204, 243, 129, 0.7);
-  }
-  100% {
-    transform: scale(1.1);
-    opacity: 0.4;
-    border-color: var(--Primary);
-  }
-}
-
-@keyframes gradientShift {
-  0% {
-    background: linear-gradient(135deg, rgba(204, 243, 129, 0.4) 0%, rgba(204, 243, 129, 0) 100%);
-  }
-  50% {
-    background: linear-gradient(225deg, rgba(204, 243, 129, 0.4) 0%, rgba(204, 243, 129, 0) 100%);
-  }
-  100% {
-    background: linear-gradient(315deg, rgba(204, 243, 129, 0.4) 0%, rgba(204, 243, 129, 0) 100%);
-  }
+  transform: none;
+  box-shadow: none;
 }
 
 .home_info {
@@ -425,55 +357,15 @@ span + span {
 .container_parrafo-info {
   display: none;
 }
-.cv_button {
-  position: relative;
-  border: 1px solid var(--Primary);
-  color: var(--white);
-  font-family: "Cooper Hewitt";
-  background: transparent;
-  font-weight: bold;
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  margin: 2rem 0;
-  cursor: pointer;
-  padding: 8px 60px;
-  border-radius: 8px;
-  overflow: hidden;
-  width: 280px;
-  text-align: center;
-  transition: all 0.2s ease;
-  z-index: 1;
+.container_button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
 }
 
-.cv_button span {
-  position: relative;
-  z-index: 2;
-  transition: color 0.2s ease;
-}
-
-.cv_button::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--Primary);
-  z-index: 1;
-  opacity: 0;
-  transition: opacity 0.2s ease;
-}
-
-.cv_button:hover::before {
-  opacity: 0.1;
-}
-
-.cv_button:hover {
-  color: var(--Primary);
-  box-shadow: 0 0 10px rgba(204, 243, 129, 0.2);
-}
-
+.cv_button,
 .contact_button {
   position: relative;
   border: 1px solid var(--Primary);
@@ -481,26 +373,32 @@ span + span {
   font-family: "Cooper Hewitt";
   background: transparent;
   font-weight: bold;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
-  margin: 2rem 0;
+  margin: 0;
   cursor: pointer;
-  padding: 8px 60px;
-  border-radius: 8px;
+  padding: 6px 50px;
+  border-radius: 6px;
   overflow: hidden;
-  width: 280px;
+  width: 260px;
+  height: 40px;
   text-align: center;
   transition: all 0.2s ease;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.cv_button span,
 .contact_button span {
   position: relative;
   z-index: 2;
   transition: color 0.2s ease;
 }
 
+.cv_button::before,
 .contact_button::before {
   content: "";
   position: absolute;
@@ -514,19 +412,22 @@ span + span {
   transition: opacity 0.2s ease;
 }
 
+.cv_button:hover::before,
 .contact_button:hover::before {
-  opacity: 0.1;
+  opacity: 0;
 }
 
+.cv_button:hover,
 .contact_button:hover {
   color: var(--Primary);
-  box-shadow: 0 0 10px rgba(204, 243, 129, 0.2);
+  box-shadow: none;
 }
 
 .links {
   display: flex;
   justify-content: center;
-  padding: 2rem 0 6rem 0;
+  padding: 4rem 0 6rem 0;
+  margin-top: 2rem;
 }
 
 .links img {

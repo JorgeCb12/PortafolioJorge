@@ -175,25 +175,21 @@ div.btn {
 
 /* Botón de contacto */
 
+.container_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.8rem;
+}
+
+.cv_button,
 .contact_button {
-    position: relative;
-    border: 1px solid var(--Primary);
-    color: var(--white);
-    font-family: "Cooper Hewitt";
-    background: transparent;
-    font-weight: bold;
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    letter-spacing: 0.1rem;
-    margin: 2rem 0;
-    cursor: pointer;
-    padding: 8px 60px;
-    border-radius: 8px;
-    overflow: hidden;
-    width: 280px;
-    text-align: center;
-    transition: all 0.2s ease;
-    z-index: 1;
+    width: 260px;
+    height: 42px;
+    margin: 0;
+    font-size: 1.3rem;
+    padding: 6px 50px;
 }
 
 .contact_button span {
@@ -219,18 +215,25 @@ div.btn {
     opacity: 0.1;
 }
 
+.cv_button:hover,
 .contact_button:hover {
     color: var(--Primary);
-    box-shadow: 0 0 10px rgba(204, 243, 129, 0.2);
+    box-shadow: none;
+}
+
+.cv_button:hover::before,
+.contact_button:hover::before {
+    opacity: 0;
 }
 
 .links {
-    width: auto; /* Ajustar el ancho automáticamente */
-    display: flex; /* Organizar los links en una disposición horizontal */
-    flex-direction: row; /* Alinear los links en una fila */
-    justify-content: center; /* Centrar los links horizontalmente */
-    gap: 1rem; /* Espacio entre los links */
-    padding: 0;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    padding: 3rem 0;
+    margin-top: 1rem;
 }
 
 .links img {

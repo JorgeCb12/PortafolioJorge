@@ -48,6 +48,23 @@ nav.nav_menu.active a.active {
     font-size: 3.6rem;
 }
 
+.container_button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.cv_button,
+.contact_button {
+    width: 240px;
+    height: 38px;
+    margin: 0;
+    font-size: 1.2rem;
+    padding: 5px 45px;
+}
+
 .cv_button {
     position: relative;
     color: var(--white);
@@ -57,12 +74,10 @@ nav.nav_menu.active a.active {
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    margin: 2rem 0;
     cursor: pointer;
     padding: 8px 60px;
     border-radius: 8px;
     overflow: hidden;
-    width: 280px;
     text-align: center;
     transition: all 0.2s ease;
     z-index: 1;
@@ -93,7 +108,7 @@ nav.nav_menu.active a.active {
 
 .cv_button:hover {
     color: var(--Primary);
-    box-shadow: 0 0 10px rgba(204, 243, 129, 0.2);
+    box-shadow: none;
 }
 
 .contact_button {
@@ -106,12 +121,10 @@ nav.nav_menu.active a.active {
     font-size: 1.4rem;
     text-transform: uppercase;
     letter-spacing: 0.1rem;
-    margin: 2rem 0;
     cursor: pointer;
     padding: 8px 60px;
     border-radius: 8px;
     overflow: hidden;
-    width: 280px;
     text-align: center;
     transition: all 0.2s ease;
     z-index: 1;
@@ -137,12 +150,12 @@ nav.nav_menu.active a.active {
 }
 
 .contact_button:hover::before {
-    opacity: 0.1;
+    opacity: 0;
 }
 
 .contact_button:hover {
     color: var(--Primary);
-    box-shadow: 0 0 10px rgba(204, 243, 129, 0.2);
+    box-shadow: none;
 }
 
 /* Home */
@@ -271,4 +284,14 @@ nav.nav_menu.active a.active {
     display: flex; /* Asegurar que el contenedor use flexbox */
     margin-left: auto; /* Centrar horizontalmente */
     margin-right: auto; /* Centrar horizontalmente */
+}
+
+.links {
+  width: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 4.5rem 0;
+  margin-top: 2.5rem;
 }
