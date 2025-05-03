@@ -173,14 +173,23 @@ div.btn {
     }
 }
 
-/* Botón de contacto */
-
+/* Estilos de botones para desktop */
 .container_button {
     display: flex;
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
     margin-top: 1.8rem;
+}
+
+.container_button a {
+    text-decoration: none !important;
+    outline: none;
+}
+
+.container_button a:hover,
+.container_button a:focus {
+    text-decoration: none !important;
 }
 
 .cv_button,
@@ -190,40 +199,24 @@ div.btn {
     margin: 0;
     font-size: 1.3rem;
     padding: 6px 50px;
+    border: none;
+    outline: none;
+    text-decoration: none !important;
 }
 
+.cv_button span,
 .contact_button span {
-    position: relative;
-    z-index: 2;
-    transition: color 0.2s ease;
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
-.contact_button::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: var(--Primary);
-    z-index: 1;
-    opacity: 0;
-    transition: opacity 0.2s ease;
-}
-
-.contact_button:hover::before {
-    opacity: 0.1;
-}
-
-.cv_button:hover,
-.contact_button:hover {
-    color: var(--Primary);
-    box-shadow: none;
-}
-
-.cv_button:hover::before,
-.contact_button:hover::before {
-    opacity: 0;
+/* Asegurarse de que no haya decoración de texto en ningún estado */
+.cv_button:hover span,
+.contact_button:hover span,
+.cv_button:focus span,
+.contact_button:focus span {
+    text-decoration: none !important;
+    border-bottom: none !important;
 }
 
 .links {
@@ -497,4 +490,75 @@ div.btn {
     width: 45%;
     margin: 0;
     padding: 4rem 3rem;
+}
+
+/* Animaciones específicas para desktop */
+@media (min-width: 1200px) {
+  .home_info {
+    animation: fadeIn 1s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .cards--proyectos {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .cards--proyectos:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .cards--habilidades {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .cards--habilidades:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 30px rgba(204, 243, 129, 0.4);
+  }
+
+  .container--contacto {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  .container--contacto:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  }
+
+  .links a {
+    transition: all 0.3s ease;
+  }
+
+  .links a:hover {
+    transform: translateY(-5px) scale(1.1);
+  }
+
+  .go-top-button {
+    transition: all 0.3s ease;
+  }
+
+  .go-top-button:hover {
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(204, 243, 129, 0.4);
+  }
+
+  /* Efecto de parallax para las secciones */
+  section {
+    transition: transform 0.3s ease-out;
+  }
+
+  section:hover {
+    transform: translateY(-5px);
+  }
 }

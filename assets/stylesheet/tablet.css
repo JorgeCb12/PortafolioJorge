@@ -63,6 +63,8 @@ nav.nav_menu.active a.active {
     margin: 0;
     font-size: 1.2rem;
     padding: 5px 45px;
+    border: none;
+    outline: none;
 }
 
 .cv_button {
@@ -294,4 +296,93 @@ nav.nav_menu.active a.active {
   gap: 1.5rem;
   padding: 4.5rem 0;
   margin-top: 2.5rem;
+}
+
+/* Animaciones específicas para tablet */
+@media (min-width: 760px) {
+  .image_home {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(0px);
+    }
+  }
+
+  .cards--proyectos {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .cards--proyectos:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+
+  .container_btn--proyectos button {
+    transition: all 0.3s ease;
+  }
+
+  .container_btn--proyectos button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(204, 243, 129, 0.3);
+  }
+
+  .cards--habilidades {
+    transition: all 0.3s ease;
+  }
+
+  .cards--habilidades:hover {
+    transform: scale(1.1) rotate(5deg);
+  }
+
+  .container--contacto {
+    transition: all 0.3s ease;
+  }
+
+  .container--contacto:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+/* Actualización de estilos de botones para tablet */
+.container_button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.cv_button,
+.contact_button {
+  width: 240px;
+  height: 38px;
+  margin: 0;
+  font-size: 1.2rem;
+  padding: 5px 45px;
+  border: none;
+  outline: none;
+}
+
+.cv_button:hover,
+.contact_button:hover {
+  transform: translateY(-2px);
+}
+
+/* Asegurarse de que no haya bordes ni outlines */
+.container_button a {
+  text-decoration: none;
+  outline: none;
+}
+
+.container_button a:focus {
+  outline: none;
 }
